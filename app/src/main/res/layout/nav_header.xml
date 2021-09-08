@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.assignment.data.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivCover"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user.name.charAt(0))}"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCover"
+            app:layout_constraintEnd_toEndOf="@+id/ivCover"
+            app:layout_constraintStart_toStartOf="@+id/ivCover"
+            app:layout_constraintTop_toTopOf="@+id/ivCover" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{user.name}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvNumber"
+            app:layout_constraintStart_toEndOf="@+id/ivCover"
+            app:layout_constraintTop_toTopOf="@+id/ivCover"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.phoneNumber}"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCover"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/line_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCover" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

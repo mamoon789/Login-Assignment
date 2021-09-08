@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvFaq"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:layout_constraintBottom_toTopOf="@+id/tvAnswer"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="packed">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/product_background">
+
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="150dp"
+            android:layout_height="125dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/person"
+            app:layout_constraintBottom_toTopOf="@+id/tvProductName"
+            app:layout_constraintStart_toStartOf="@+id/tvProductName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T-Shirt"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvProductLeft"
+            app:layout_constraintStart_toStartOf="@+id/tvProductLeft"
+            app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
+
+        <TextView
+            android:id="@+id/tvProductLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="42 items left"
+            app:layout_constraintBottom_toTopOf="@+id/tvProductQuantity"
+            app:layout_constraintStart_toStartOf="@+id/tvProductQuantity"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
+
+        <TextView
+            android:id="@+id/tvProductQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total quantity 50"
+            app:layout_constraintBottom_toTopOf="@+id/tvProductPrice"
+            app:layout_constraintStart_toStartOf="@+id/tvProductPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductLeft" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs 1,550"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductQuantity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

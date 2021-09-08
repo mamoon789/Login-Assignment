@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.ProductFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvLabel1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:text="Add your products and their variants"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.widget.Button
+            android:id="@+id/btAddProducts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
+            android:padding="17dp"
+            android:text="Add Product"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tvLabel1"
+            app:layout_constraintStart_toStartOf="@+id/tvLabel1"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabel1" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/svSearchProducts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/search_field_background"
+            android:hint="Search Products"
+            app:defaultQueryHint="Search Products"
+            android:autofillHints="Search Products"
+            app:searchHintIcon="@drawable/search"
+            app:queryHint="Search Products"
+            app:layout_constraintEnd_toEndOf="@+id/btAddProducts"
+            app:layout_constraintStart_toStartOf="@+id/btAddProducts"
+            app:layout_constraintTop_toBottomOf="@+id/btAddProducts"
+            app:searchIcon="@drawable/search" />
+
+        <TextView
+            android:id="@+id/tvTotalProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="25 Total Products"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivChooseProducts"
+            app:layout_constraintStart_toStartOf="@+id/svSearchProducts"
+            app:layout_constraintTop_toBottomOf="@+id/svSearchProducts" />
+
+        <ImageButton
+            android:id="@+id/ivChooseProducts"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="32dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/group"
+            app:layout_constraintEnd_toStartOf="@+id/ivSortProducts"
+            app:layout_constraintTop_toTopOf="@+id/ivSortProducts" />
+
+        <ImageButton
+            android:id="@+id/ivSortProducts"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="32dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/sort"
+            app:layout_constraintEnd_toStartOf="@+id/ivFilterProducts"
+            app:layout_constraintTop_toTopOf="@+id/ivFilterProducts" />
+
+        <ImageButton
+            android:id="@+id/ivFilterProducts"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/filter"
+            app:layout_constraintEnd_toEndOf="@+id/svSearchProducts"
+            app:layout_constraintTop_toBottomOf="@+id/svSearchProducts" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProducts"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ivFilterProducts"
+            app:layout_constraintStart_toStartOf="@+id/tvTotalProducts"
+            app:layout_constraintTop_toBottomOf="@+id/ivChooseProducts"
+            app:spanCount="2"
+            tools:listitem="@layout/product_item" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

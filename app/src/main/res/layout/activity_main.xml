@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.assignment.ui.vm.UserViewModel" />
+
+        <variable
+            name="user"
+            type="com.example.assignment.data.User" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="right">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/blue"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                tools:context=".ui.activity.MainActivity" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/menu">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:onClick="@{()->viewModel.updateUser(user)}">
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/line_blue"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/logput"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Log Out"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>
